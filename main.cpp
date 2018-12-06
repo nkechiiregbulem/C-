@@ -15,6 +15,8 @@ using namespace std;
 int main()
 {
     // 1$ =.72 euro, 1$=0.60gbp, 1$ = 102.15 yen, 1$ = 1.10 CAD
+    string yes_no = "yes";
+    while (yes_no == "yes") {
     float AMOUNT2;
     cout << "Enter the amount you in US Dollars($$) : " << endl;
     cin >> AMOUNT2;
@@ -39,8 +41,9 @@ int main()
             cout << "$" << AMOUNT2<< " = " << (AMOUNT2*0.79) << " GBP" <<endl;
             break;
     }
-    
-    
+        cout << "Enter yes to convert again" << endl;
+        cin >> yes_no;
+    };
     
     char exit;
     cin >> exit;
