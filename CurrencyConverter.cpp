@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-    // 1$ =.72 euro, 1$=0.60gbp, 1$ = 102.15 yen, 1$ = 1.10 CAD
+    
     string yes_no = "yes";
     while (yes_no == "yes") {
         float AMOUNT2;
