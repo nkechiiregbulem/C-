@@ -1,51 +1,72 @@
 //
 //  main.cpp
-//  Server
+//  Random Episode Generator
 //
-//  Created by Nkechi Iregbulem on 12/4/18.
+//  Created by Nkechi Iregbulem on 12/18/18.
 //  Copyright © 2018 Nkechi Iregbulem. All rights reserved.
 //
+
 #include <iostream>
 #include <string>
-#include <cstdlib>
+#include <random>
+#include <time.h>
 using namespace std;
 
-
-
-int main()
-{
-    // 1$ =.72 euro, 1$=0.60gbp, 1$ = 102.15 yen, 1$ = 1.10 CAD
-    string yes_no = "yes";
-    while (yes_no == "yes") {
-    float AMOUNT2;
-    cout << "Enter the amount you in US Dollars($$) : " << endl;
-    cin >> AMOUNT2;
-    int select2;
-    cout << "1) EURO/USD" << endl;
-    cout << "2) YEN/USD" << endl;
-    cout << "3) CAD/USD" << endl;
-    cout << "4) GBP/USD" << endl;
-    cin >> select2;
-    switch(select2)
-    {
-        case 1:
-            cout <<"$" <<AMOUNT2<< " = "<<(AMOUNT2*0.88) << " EURO" << endl;
-            break;
-        case 2:
-            cout <<"$" << AMOUNT2<<" = " << (AMOUNT2*112.97) << " YEN" <<endl;
-            break;
-        case 3:
-            cout << "$" << AMOUNT2<< " = " <<(AMOUNT2*1.34)<< " CAD" <<endl;
-            break;
-        case 4:
-            cout << "$" << AMOUNT2<< " = " << (AMOUNT2*0.79) << " GBP" <<endl;
-            break;
-    }
-        cout << "Enter yes to convert again" << endl;
-        cin >> yes_no;
+int main() {
+    srand( static_cast<unsigned int>(time(NULL)));
+    
+    const int Friends[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    const string Friends1[4] = {"Friends: Episode1", "Friends: Episode 2", "Friends" , "Hope"};
+    const string BoyMeetsWorld [4] = {"Season1: Episode1", "Season2: Episode 2", "Season3: Episode3", "Season4: Episode4"};
+    const string TheOffice[4] = {"Season1: Episode1", "Season2: Episode 2", "Season3: Episode3", "Season4: Episode4"};
+    const string Seinfeld[4] = {"Season1: Episode1", "Season2: Episode 2", "Season3: Episode3", "Season4: Episode4"};
+    int randomIndex = rand() % 10;
+    int randomIndex2 = rand() % 4;
+    
+    // cout << Friends[randomIndex] << endl;
+    //cout << Friends1[randomIndex2] << endl;
+    //cout << BoyMeetsWorld[randomIndex2] << endl;
+    //cout << TheOffice[randomIndex2] << endl;
+    
+    
+    int option = 0;
+    cout << "1) Friends" << endl;
+    cout << "2) Boy Meets World" << endl;
+    cout << "3) The Office" << endl;
+    cout << "4) Seinfeld" << endl;
+    while (option < 1 || option > 4) {
+        cout << "Please Enter an Option" << endl;
+        cin >> option;
     };
     
-    char exit;
-    cin >> exit;
-    return 0;
+    if (option == 1) {
+        cout << "You have chosen to watch Friends." << endl << " Please wait a moment while we generate an episode" << endl;
+        cout << "........................." << endl;
+        cout << Friends1[randomIndex2] << endl;
+    }
+    if (option == 2) {
+        cout << "You have chosen to watch Boy Meets World." << "Please wait a moment while we generate an episode" << endl;
+        cout << ".........................." << endl;
+        cout << BoyMeetsWorld[randomIndex2] << endl;
+    }
+    if (option == 3) {
+        cout << "You have chosen to watch The Office." << "Please wait a moment while we generate an episode" << endl;
+        cout << "......................" << endl;
+        cout << TheOffice[randomIndex2] << endl;
+    }
+    if (option == 4) {
+        cout << "You have chosen to watch Seinfeld." << "Please wait a moment while we generate an episode" << endl;
+        cout << "......................" << endl;
+        cout << Seinfeld[randomIndex2] << endl;
+    }
+
+return 0;
 }
+
+    
+
+
+    
+    
+    
+
